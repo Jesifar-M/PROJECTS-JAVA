@@ -1,3 +1,5 @@
+package com;
+
 import profile.UserInput;
 import greeting.GreetingDisplay;
 
