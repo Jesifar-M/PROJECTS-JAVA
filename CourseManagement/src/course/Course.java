@@ -2,42 +2,40 @@ package course;
 
 public class Course {
 
-    // Instance variables
     private String courseName;
     private int duration;
-
-    // Static variable
-    static int courseCount = 0;
+    private int studentsEnrolled;
 
     // Final variable
-    final String trainingCenter = "ABC Training Center";
+    final String creator = "CodeMentor Academy";
 
-    // Default constructor
-    Course() {
-        courseName = "Java Programming";
-        duration = 8;
-        courseCount++;
-    }
+    // Static variable
+    static int totalStudents = 0;
 
     // Parameterized constructor
-    Course(String courseName, int duration) {
+    Course(String courseName, int duration, int studentsEnrolled) {
+
         this.courseName = courseName;
         this.duration = duration;
-        courseCount++;
+        this.studentsEnrolled = studentsEnrolled;
+
+        totalStudents = totalStudents + studentsEnrolled;
     }
 
     // Display course details
     void displayDetails() {
+
         System.out.println("Course Name: " + courseName);
         System.out.println("Duration: " + duration + " weeks");
-        System.out.println("Training Center: " + trainingCenter);
+        System.out.println("Students Enrolled: " + studentsEnrolled);
+        System.out.println("Creator: " + creator);
     }
 
-    // Non-static inner class
-    class CourseMaterial {
+    // Static nested class
+    static class Platform {
 
-        void printMaterial() {
-            System.out.println("Materials provided for this course.");
+        static void showPlatform() {
+            System.out.println("Courses are hosted on CodeMentor");
         }
     }
 }
